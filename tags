@@ -1,0 +1,191 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AH	battle/battle.h	/^    std::map<std::string, float>  AH;$/;"	m	class:BattleRecord
+AS	battle/battle.h	/^    std::map<std::string, float>  AS;$/;"	m	class:BattleRecord
+ArmiesBattleInfo	battle/army.h	/^class ArmiesBattleInfo $/;"	c
+Army	battle/army.cpp	/^Army::Army(Soldier soldierData, Hero heroData[], int length) {$/;"	f	class:Army
+Army	battle/army.h	/^class Army {$/;"	c
+ArmyBattle	battle/army.cpp	/^ArmyBattle::ArmyBattle(Army armyInfo): isAttacker(false),retreated(false) {$/;"	f	class:ArmyBattle
+ArmyBattle	battle/army.h	/^    ArmyBattle(Army armyInfo): Army(armyInfo), isAttacker(false),retreated(false) {$/;"	f	class:ArmyBattle
+ArmyBattle	battle/army.h	/^class ArmyBattle {$/;"	c
+ArmyBuff	battle/buff.h	/^class ArmyBuff {$/;"	c
+BattleBuff	battle/buff.h	/^    BattleBuff(): attackBuildingBuff(), defenseBuildingBuff(), attackerPlusBuff(0.0), defenserPlusBuff(0.0), attackPlusBuff(0.0), defensePlusBuff(0.0) {}$/;"	f	class:BattleBuff
+BattleBuff	battle/buff.h	/^class BattleBuff {$/;"	c
+BattleRecord	battle/battle.h	/^class BattleRecord {$/;"	c
+BattleResult	battle/battle.h	/^class BattleResult {$/;"	c
+Buff	battle/buff.h	/^    Buff(): attackValueTune(0.0), defenseValueTune(0.0), rescueValueTune(0.0), yinglieciLevel(0.0) {}$/;"	f	class:Buff
+Buff	battle/buff.h	/^    Buff(buff buffValue) {$/;"	f	class:Buff
+Buff	battle/buff.h	/^class Buff {$/;"	c
+DH	battle/battle.h	/^    std::map<std::string, float>  DH;$/;"	m	class:BattleRecord
+DS	battle/battle.h	/^    std::map<std::string, float>  DS;$/;"	m	class:BattleRecord
+EventBase	battle/battle.h	/^class EventBase {$/;"	c
+EventRecord	battle/battle.h	/^class EventRecord {$/;"	c
+HeroBase	battle/hero.cpp	/^HeroBase::HeroBase(HeroBase heroData) {$/;"	f	class:HeroBase
+HeroBase	battle/hero.h	/^class HeroBase {$/;"	c
+HeroBattle	battle/hero.cpp	/^HeroBattle::HeroBattle(HeroBase hero): HeroBase(hero){$/;"	f	class:HeroBattle
+HeroBattle	battle/hero.h	/^class HeroBattle : public HeroBase {$/;"	c
+HeroBuff	battle/buff.h	/^class HeroBuff {$/;"	c
+OutputBuff	battle/buff.h	/^class OutputBuff {$/;"	c
+PercentAndValue	battle/buff.h	/^	PercentAndValue(PercentAndValue pv): percent(pv.percent), value(pv.value) {}$/;"	f	class:PercentAndValue
+PercentAndValue	battle/buff.h	/^	PercentAndValue(int p, int v): percent(p), value(v) {}$/;"	f	class:PercentAndValue
+PercentAndValue	battle/buff.h	/^class PercentAndValue {$/;"	c
+ROUNDNUMBER	battle/battle.cpp	4;"	d	file:
+SkillEffect	battle/battle.h	/^class SkillEffect {$/;"	c
+SkillRecord	battle/battle.h	/^class SkillRecord {$/;"	c
+SoldierBase	battle/soldier.cpp	/^SoldierBase::SoldierBase(SoldierBase soldier)$/;"	f	class:SoldierBase
+SoldierBase	battle/soldier.cpp	/^SoldierBase::SoldierBase(int _id, int _pos, int _number, int _trainLv, int  skill[], int _elv, int _length){$/;"	f	class:SoldierBase
+SoldierBase	battle/soldier.h	/^class SoldierBase {$/;"	c
+SoldierBattle	battle/soldier.cpp	/^SoldierBattle::SoldierBattle(SoldierBase soldier): SolderBase(soldier) {$/;"	f	class:SoldierBattle
+SoldierBattle	battle/soldier.h	/^class SoldierBattle : public SoldierBase {$/;"	c
+aevents	battle/battle.h	/^    std::vector<std::map<int, EventBase>>   aevents;$/;"	m	class:BattleResult
+aevents	battle/battle.h	/^    std::vector<std::map<int, EventBase>>   aevents;$/;"	m	class:EventRecord
+ahid	battle/battle.h	/^    int     ahid;$/;"	m	class:SkillEffect
+allDead	battle/battle.h	/^    bool                        allDead;$/;"	m	class:BattleResult
+armies	battle/army.h	/^    std::vector<ArmyBattle> armies;$/;"	m	class:ArmiesBattleInfo
+armyBuff	battle/army.h	/^    ArmyBuff*       armyBuff;$/;"	m	class:ArmyBattle
+asid	battle/battle.h	/^    int     asid;$/;"	m	class:SkillEffect
+attackBuildingBuff	battle/buff.h	/^    Buff attackBuildingBuff;$/;"	m	class:BattleBuff
+attackContinuousCount	battle/buff.h	/^    int             attackContinuousCount;$/;"	m	class:ArmyBuff
+attackHospitalDisable	battle/buff.h	/^    bool attackHospitalDisable;$/;"	m	class:OutputBuff
+attackPlusBuff	battle/buff.h	/^    float attackPlusBuff;$/;"	m	class:BattleBuff
+attackTune	battle/buff.h	/^	PercentAndValue attackTune  ;\/\/ 攻击增减$/;"	m	class:HeroBuff
+attackValue	battle/hero.h	/^    int attackValue;$/;"	m	class:HeroBattle
+attackValue	battle/soldier.h	/^    int attackValue;$/;"	m	class:SoldierBattle
+attackValueTune	battle/buff.h	/^    PercentAndValue attackValueTune;$/;"	m	class:ArmyBuff
+attackValueTune	battle/buff.h	/^    float attackValueTune;$/;"	m	class:Buff
+attackerPlusBuff	battle/buff.h	/^    float attackerPlusBuff;$/;"	m	class:BattleBuff
+blessing	battle/buff.h	/^    PercentAndValue blessing;    \/\/祝福$/;"	m	class:ArmyBuff
+buildingBuff	battle/buff.h	/^               disableWall(0), plusBuff(0), criticalPercent(0), silentCount(0), buildingBuff() {}$/;"	f	class:ArmyBuff
+buildingBuff	battle/buff.h	/^    Buff            buildingBuff;$/;"	m	class:ArmyBuff
+computeBattleResult	battle/battle.cpp	/^int computeBattleResult(Army attackArmyArray[],Army defenseArmyArray[], int battleType, Buff battleBuff) {$/;"	f
+criticalPercent	battle/buff.h	/^    int             criticalPercent ;$/;"	m	class:ArmyBuff
+curse	battle/buff.h	/^    PercentAndValue curse;    \/\/诅咒$/;"	m	class:ArmyBuff
+deathRattleInvalidCount	battle/buff.h	/^	int             deathRattleInvalidCount ;  \/\/亡语失效$/;"	m	class:HeroBuff
+defenseBuildingBuff	battle/buff.h	/^    Buff defenseBuildingBuff;$/;"	m	class:BattleBuff
+defenseHospitalDisable	battle/buff.h	/^    bool defenseHospitalDisable;$/;"	m	class:OutputBuff
+defensePlusBuff	battle/buff.h	/^    float defensePlusBuff;$/;"	m	class:BattleBuff
+defenseTune	battle/buff.h	/^	PercentAndValue defenseTune ; \/\/ 防御增减$/;"	m	class:HeroBuff
+defenseValue	battle/hero.h	/^    int defenseValue;$/;"	m	class:HeroBattle
+defenseValue	battle/soldier.h	/^    int defenseValue;$/;"	m	class:SoldierBattle
+defenseValueTune	battle/buff.h	/^    PercentAndValue defenseValueTune;$/;"	m	class:ArmyBuff
+defenseValueTune	battle/buff.h	/^    float defenseValueTune;$/;"	m	class:Buff
+defenserPlusBuff	battle/buff.h	/^    float defenserPlusBuff;$/;"	m	class:BattleBuff
+define	battle/battle.h	/^    int     define;$/;"	m	class:SkillEffect
+destroyBuildingPercent	battle/buff.h	/^    float destroyBuildingPercent;$/;"	m	class:OutputBuff
+devents	battle/battle.h	/^    std::vector<std::map<int, EventBase>>   devents;$/;"	m	class:BattleResult
+devents	battle/battle.h	/^    std::vector<std::map<int, EventBase>>   devents;$/;"	m	class:EventRecord
+dhid	battle/battle.h	/^    int     dhid;$/;"	m	class:SkillEffect
+disableArrowTower	battle/buff.h	/^    int             disableArrowTower;$/;"	m	class:ArmyBuff
+disableDefense	battle/buff.h	/^    int             disableDefense;$/;"	m	class:ArmyBuff
+disableWall	battle/buff.h	/^    int             disableWall;$/;"	m	class:ArmyBuff
+dsid	battle/battle.h	/^    int     dsid;$/;"	m	class:SkillEffect
+elv	battle/hero.h	/^    int elv;$/;"	m	class:HeroBase
+elv	battle/soldier.h	/^    int elv;$/;"	m	class:SoldierBase
+event	battle/battle.h	/^    std::map<int, int> event;$/;"	m	class:EventBase
+events	battle/army.h	/^    int*    events;$/;"	m	class:ArmyBattle
+force	battle/hero.h	/^    int force;$/;"	m	class:HeroBattle
+force	battle/soldier.h	/^    int force;$/;"	m	class:SoldierBattle
+forceTune	battle/buff.h	/^	PercentAndValue forceTune  ;\/\/ 武力增减$/;"	m	class:HeroBuff
+freezeAttackCount	battle/buff.h	/^    int             freezeAttackCount;$/;"	m	class:ArmyBuff
+getValue	battle/buff.cpp	/^float buff::getValue(char* key) {$/;"	f	class:buff
+getValue	battle/buff.h	/^    float getValue(char* key) {}$/;"	f	class:Buff
+getValue	battle/hero.cpp	/^virtual T heroBattle::getValue(char* key) $/;"	f	class:heroBattle
+getValue	battle/hero.cpp	/^virtual int HeroBase::getValue(char* key) $/;"	f	class:HeroBase
+heroBuff	battle/hero.h	/^    HeroBuff* heroBuff;$/;"	m	class:HeroBattle
+heroData	battle/hero.h	/^    int heroData;$/;"	m	class:HeroBattle
+heroID	battle/battle.h	/^    int     heroID;$/;"	m	class:SkillRecord
+heros	battle/army.h	/^    std::vector<HeroBase> heros;$/;"	m	class:Army
+herosBattle	battle/army.h	/^    std::vector<HeroBattle> herosBattle;$/;"	m	class:ArmyBattle
+hp	battle/hero.h	/^    int hp;$/;"	m	class:HeroBattle
+hp	battle/soldier.h	/^    int hp;$/;"	m	class:SoldierBattle
+hpTune	battle/buff.h	/^	PercentAndValue hpTune ; \/\/ 生命增减$/;"	m	class:HeroBuff
+id	battle/battle.h	/^    int     id;$/;"	m	class:SkillEffect
+id	battle/hero.h	/^    int id;$/;"	m	class:HeroBase
+id	battle/soldier.h	/^    int id;$/;"	m	class:SoldierBase
+ignoreRestriction	battle/buff.h	/^    int             ignoreRestriction;$/;"	m	class:ArmyBuff
+immuneChaosCount	battle/buff.h	/^    int             immuneChaosCount;$/;"	m	class:ArmyBuff
+immuneRetreatArmyCount	battle/buff.h	/^    int             immuneRetreatArmyCount;$/;"	m	class:ArmyBuff
+immuneRetreatCount	battle/buff.h	/^	int        		immuneRetreatCount ; \/\/ 自身免疫退将$/;"	m	class:HeroBuff
+immuneRetreatHeroCount	battle/buff.h	/^    int             immuneRetreatHeroCount;$/;"	m	class:ArmyBuff
+immuneSkillCount	battle/buff.h	/^    int             immuneSkillCount;$/;"	m	class:ArmyBuff
+initArmyBattleInfo	battle/battle.cpp	/^int initArmyBattleInfo(Army armyArray[], int armyLength,  bool isAttacker, Buff buildingBuff, float plusBuff) {$/;"	f
+invisibleCount	battle/buff.h	/^	int 			invisibleCount ; \/\/不能成为目标，$/;"	m	class:HeroBuff
+isAttacker	battle/army.h	/^    bool    isAttacker;$/;"	m	class:ArmyBattle
+isAttacker	battle/hero.h	/^    bool isAttacker;$/;"	m	class:HeroBattle
+isOwnSkill	battle/battle.h	/^    bool    isOwnSkill;$/;"	m	class:SkillRecord
+killerArmy	battle/hero.h	/^    int killerArmy ;$/;"	m	class:HeroBattle
+launch	battle/battle.h	/^    bool    launch;$/;"	m	class:SkillRecord
+leaderTune	battle/buff.h	/^	PercentAndValue	leaderTune ;\/\/ 统率增减$/;"	m	class:HeroBuff
+leadership	battle/hero.h	/^    int leadership;$/;"	m	class:HeroBattle
+level	battle/hero.h	/^    int level;$/;"	m	class:HeroBase
+loseAttackHeros	battle/battle.h	/^    std::map<int, int*>         loseAttackHeros;$/;"	m	class:BattleResult
+loseDefenseHeros	battle/battle.h	/^    std::map<int, int*>         loseDefenseHeros;$/;"	m	class:BattleResult
+newAttackSoldiers	battle/battle.h	/^    std::map<int, int>          newAttackSoldiers;$/;"	m	class:BattleResult
+newDefenseSoldiers	battle/battle.h	/^    std::map<int, int>          newDefenseSoldiers;$/;"	m	class:BattleResult
+number	battle/soldier.h	/^    int number;$/;"	m	class:SoldierBase
+operation	battle/hero.h	/^    HeroBase& operation = (HeroBase *);$/;"	m	class:HeroBase
+operator =	battle/hero.cpp	/^HeroBase& HeroBase::operator = (HeroBase *heroData) {$/;"	f	class:HeroBase
+originalNumber	battle/soldier.h	/^    int originalNumber;$/;"	m	class:SoldierBattle
+outputBuff	battle/battle.h	/^    OutputBuff                  outputBuff;$/;"	m	class:BattleResult
+ownArmy	battle/hero.h	/^    int ownArmy;$/;"	m	class:HeroBattle
+p_soldier	battle/army.h	/^    SoldierBase* p_soldier;$/;"	m	class:Army
+percent	battle/buff.h	/^	int percent;$/;"	m	class:PercentAndValue
+percentAndValue	battle/buff.h	/^    percentAndValue(): percent(0), value(0) {}$/;"	f	class:PercentAndValue
+plusBuff	battle/buff.h	/^    int             plusBuff;$/;"	m	class:ArmyBuff
+pos	battle/hero.h	/^        id(_id), level(_level), sWisdom(_sWisdom), sLeader(_sLeader), sForce(_sForce), sFortune(_sFortune), star(_star), elv(_elv), pos(_pos) {}$/;"	f	class:HeroBase
+pos	battle/hero.h	/^    int pos;$/;"	m	class:HeroBase
+pos	battle/soldier.h	/^    int pos;$/;"	m	class:SoldierBase
+pskills	battle/battle.h	/^    std::vector<SkillRecord>    pskills;$/;"	m	class:BattleResult
+range	battle/battle.h	/^    int     range;$/;"	m	class:SkillEffect
+rebornCount	battle/buff.h	/^	int      		rebornCount ; \/\/重生$/;"	m	class:HeroBuff
+reflectSkillCount	battle/buff.h	/^    int             reflectSkillCount;$/;"	m	class:ArmyBuff
+reliveCount	battle/buff.h	/^	int         	reliveCount ; \/\/复活$/;"	m	class:HeroBuff
+rescueValueTune	battle/buff.h	/^    float rescueValueTune;$/;"	m	class:Buff
+restrictionValueTune	battle/buff.h	/^    PercentAndValue restrictionValueTune;$/;"	m	class:ArmyBuff
+result	battle/battle.h	/^    int                         result;$/;"	m	class:BattleResult
+retreated	battle/army.h	/^    bool    retreated;$/;"	m	class:ArmyBattle
+round	battle/battle.h	/^    int     round;$/;"	m	class:SkillRecord
+sForce	battle/hero.h	/^    int sForce;$/;"	m	class:HeroBase
+sFortune	battle/hero.h	/^    int sFortune;$/;"	m	class:HeroBase
+sLeader	battle/hero.h	/^    int sLeader;$/;"	m	class:HeroBase
+sWisdom	battle/hero.h	/^    int sWisdom;$/;"	m	class:HeroBase
+setValue	battle/hero.cpp	/^virtual bool setValue(char*  key, T value)$/;"	f
+shyFightCount	battle/buff.h	/^    int             shyFightCount;$/;"	m	class:ArmyBuff
+silentCount	battle/buff.h	/^	int            	silentCount ; \/\/沉默$/;"	m	class:HeroBuff
+silentCount	battle/buff.h	/^    int             silentCount;$/;"	m	class:ArmyBuff
+skillEffects	battle/army.h	/^    int*    skillEffects;$/;"	m	class:ArmyBattle
+skillEffects	battle/battle.h	/^    std::vector<SkillEffect> skillEffects;$/;"	m	class:SkillRecord
+skillEffects	battle/hero.h	/^    std::vector<int> skillEffects;$/;"	m	class:HeroBattle
+skillID	battle/battle.h	/^    int     skillID;$/;"	m	class:SkillRecord
+skillIDs	battle/soldier.h	/^    std::vector<int> skillIDs;$/;"	m	class:SoldierBase
+skillLength	battle/hero.h	/^    int skillLength;$/;"	m	class:HeroBattle
+skillRateTune	battle/buff.h	/^    PercentAndValue skillRateTune;$/;"	m	class:ArmyBuff
+soldier	battle/army.h	/^    SoldierBattle*  soldier;$/;"	m	class:ArmyBattle
+soldierHPValueTune	battle/buff.h	/^    PercentAndValue soldierHPValueTune;   \/\/ 士兵生命加成$/;"	m	class:ArmyBuff
+soldierID	battle/battle.h	/^    int     soldierID;$/;"	m	class:SkillRecord
+speed	battle/soldier.h	/^    int speed;$/;"	m	class:SoldierBattle
+star	battle/hero.h	/^    int star;$/;"	m	class:HeroBase
+state	battle/battle.h	/^    int     state;$/;"	m	class:SkillEffect
+tauntCount	battle/buff.h	/^	int           	tauntCount ; \/\/优先成为目标$/;"	m	class:HeroBuff
+tempImmuneRetreat	battle/buff.h	/^	bool      		tempImmuneRetreat; \/\/只有一次效果的免疫退将$/;"	m	class:HeroBuff
+tempInvisible	battle/buff.h	/^	bool     		tempInvisible ; \/\/ 只有一次效果的不能成为目标$/;"	m	class:HeroBuff
+tempTaunt	battle/buff.h	/^	bool   			tempTaunt ; \/\/ 只有一次效果的优先成为目标$/;"	m	class:HeroBuff
+trainLv	battle/soldier.h	/^    int trainLv;$/;"	m	class:SoldierBase
+type	battle/battle.h	/^    char*   type;$/;"	m	class:SkillRecord
+type	battle/battle.h	/^    char* type;$/;"	m	class:BattleRecord
+type	battle/battle.h	/^    char* type;$/;"	m	class:EventRecord
+value	battle/battle.h	/^    float   value;$/;"	m	class:SkillEffect
+value	battle/buff.h	/^	int value;$/;"	m	class:PercentAndValue
+wave	battle/battle.h	/^    int     wave;$/;"	m	class:SkillRecord
+wisdom	battle/hero.h	/^    int wisdom;$/;"	m	class:HeroBattle
+wisdom	battle/soldier.h	/^    int wisdom;$/;"	m	class:SoldierBattle
+wisdomTune	battle/buff.h	/^	PercentAndValue wisdomTune ;\/\/ 智力增减$/;"	m	class:HeroBuff
+yinglieciLevel	battle/buff.h	/^    float yinglieciLevel;$/;"	m	class:Buff
+~Army	battle/army.h	/^    ~Army() {$/;"	f	class:Army
+~HeroBase	battle/hero.h	/^    ~HeroBase(){}$/;"	f	class:HeroBase
+~HeroBattle	battle/hero.cpp	/^Herobattle::~HeroBattle() {$/;"	f	class:Herobattle
+~SoldierBase	battle/soldier.h	/^    ~SoldierBase(){$/;"	f	class:SoldierBase
