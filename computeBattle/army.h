@@ -10,7 +10,16 @@ struct Soldier {
 	int pos;		//队伍所处位置
 	int* skillIDs;	//技能ID数组
 	int skillLength; //技能数组长度
-	int elv			//兵种转生等级
+	int elv;			//兵种转生等级
+    Soldier(Soldier soldier){
+        id = soldier.id;
+        number = soldier.number;
+        trainLv = soldier.trainLv;
+        pos = soldier.pos;
+        skillLength = soldier.skillLength;
+        elv = soldier.elv;
+        skillIDs = soldier.skillIDs;
+    }
 };
 
 struct Hero {
@@ -30,6 +39,7 @@ struct BattleSoldier : public Soldier {
     int originalNumber;
     int force;
     int wisdom;
+    BattleSoldier(Soldier soldier): soldier(soldier)
 };
 
 struct BattleHero : public Hero {
@@ -67,6 +77,9 @@ class BattleArmy {
     BattleSoldier soldier;
     BattleHero* heros;
     int heroSize;
+    BattleArmy(Army army, bool isAttacker): soldier(army.soldier){
+
+    }
 }
 
 
