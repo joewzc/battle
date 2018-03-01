@@ -28,7 +28,7 @@ struct Hero {
 	int sWisdom;	//武将智力
 	int sLeader;	//武将统帅
 	int sForce;		//武力值
-	int star		//武将转星
+	int star;		//武将转星
 };
 
 struct BattleSoldier : public Soldier {
@@ -39,7 +39,15 @@ struct BattleSoldier : public Soldier {
     int originalNumber;
     int force;
     int wisdom;
-    BattleSoldier(Soldier soldier): soldier(soldier)
+    BattleSoldier(Soldier soldier): soldier(soldier) {
+        attackValue = 0;
+        defenseValue = 0;
+        hp = 0;
+        speed = 100 - soldier.pos;
+        originalNumber = soldier.number;
+        force = 0;
+        wisdom = 0;
+    }
 };
 
 struct BattleHero : public Hero {
@@ -54,8 +62,8 @@ struct BattleHero : public Hero {
     bool isAttacker;
     BattleArmy* army;
     int skillEffects; //TODO　数组
-
-
+    //BattleHero operator = (Hero hero);
+    void setValue(Hero, BattleArmy*, bool);
 }
 
 class Army {
@@ -77,8 +85,18 @@ class BattleArmy {
     BattleSoldier soldier;
     BattleHero* heros;
     int heroSize;
-    BattleArmy(Army army, bool isAttacker): soldier(army.soldier){
-
+    BattleArmy(Army army, bool isAttack): soldier(army.soldier){
+        heros = new BattleHero[army.heroSize];
+        heroSize = army.heroSize;
+        for(int index=0; index<army.heroSize; index++) {
+            heros[index].setValue(army.heros[index], this, isAttack);
+        }
+        isAttacker = isAttack;
+        retreated = false;
+        skillEffects = 0;
+    }
+    ~BattleArmy(){
+        delete[] heros;
     }
 }
 
