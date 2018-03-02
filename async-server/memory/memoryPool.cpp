@@ -116,7 +116,7 @@ MemoryPool::MemoryPool(int length)
     memUsedSize = 0;
 }
 
-void* getMemory(int length)
+void* MemoryPool::getMemory(int length)
 {
     length = check_align_size(length);
     int index = 0;
@@ -174,7 +174,7 @@ void* getMemory(int length)
     }
 }
 
-void freeMemory(void* ptrMemoryBlock)
+void MemoryPool::freeMemory(void* ptrMemoryBlock)
 {
     int currentIndex = addr2index(pmemMap, ptrMemoryBlock);
     int size = pmemMap[currentIndex].count * MINUNITSIZE;
@@ -202,7 +202,7 @@ void freeMemory(void* ptrMemoryBlock)
                 MemoryChunk* newChunk = front_pop(pfreeMemChunkPool);
                 newChunk->pfreeMemAddr = currentBlock;
                 currentBlock->pmemChunk = newChunk;
-                push_back(pMem->pfreeMemChunk, newChunk);
+                push_back(pfreeMemChunk, newChunk);
 
                 memMapPoolCount--;
                 freeMemChunkCount++;
@@ -210,7 +210,101 @@ void freeMemory(void* ptrMemoryBlock)
         }
         else
         {
-            
+            MemoryChunk* newChunk = front_pop(pfreeMemChunkPool);
+            newChunk->pfreeMemAddr = currentBlock;
+            currentBlock->pmemChunk = newChunk;
+            push_back(pfreeMemChunk, newChunk);
+            memMapPoolCount--;
+            freeMemChunkCount++;
         }
     }
+    else if (currentIndex == memBlockCount-1)
+    {
+        if (currentBlock->count < memBlockCount)
+        {
+            preBlock = &(pmemMap[currentIndex-1]);
+            int index = preBlock->start;
+            preBlock = &(pmemMap[index]);
+            if (preBlock->pmemChunk != NULL)
+            {
+                preBlock->count += currentBlock->count;
+                currentBlock->pmemChunk = NULL;
+                pmemMap[currentIndex+currentBlock->count-1].start = index;
+            }
+            else
+            {
+                MemoryChunk* newChunk = front_pop(pfreeMemChunkPool);
+                newChunk->pfreeMemAddr = currentBlock;
+                push_back(pfreeMemChunk, newChunk);
+                currentBlock->pmemChunk = newChunk;
+                memMapPoolCount--;
+                freeMemChunkCount++;
+            }
+        }
+        else
+        {
+            MemoryChunk* newChunk = front_pop(pfreeMemChunkPool);
+            newChunk->pfreeMemAddr = currentBlock;
+            push_back(pfreeMemChunk, newChunk);
+            currentBlock->pmemChunk = newChunk;
+            memMapPoolCount--;
+            freeMemChunkCount++;
+
+        }
+    }
+    else
+    {
+        nextBlock = &(pmemMap[currentIndex+currentBlock->count]);
+        preBlock = &(pmemMap[currentIndex-1]);
+        int index = preBlock->start;
+        preBlock = &(pmemMap[index]);
+        bool isBackMerge = false;
+
+        if (nextBlock->pmemChunk == NULL && preBlock->pmemChunk == NULL) 
+        {
+            MemoryChunk* newChunk = front_pop(pfreeMemChunkPool);
+            newChunk->pfreeMemAddr = currentBlock;
+            push_back(pfreeMemChunk, newChunk);
+            currentBlock->pmemChunk = newChunk;
+            memMapPoolCount--;
+            freeMemChunkCount++;
+        }
+
+        if (nextBlock->pmemChunk != NULL)
+        {
+            nextBlock->pmemChunk->pfreeMemAddr = currentBlock;
+            pmemMap[currentIndex+currentBlock->count + nextBlock->count - 1].start = currentIndex;
+            currentBlock->count += nextBlock->count;
+            currentBlock->pmemChunk = nextBlock->pmemChunk;
+            nextBlock->pmemChunk = NULL;
+            isBackMerge = true;
+        }
+
+        if (preBlock->pmemBlock != NULL) 
+        {
+            pmemMap[currentIndex+currentBlock->count-1].start = currentIndex - preBlock->count;
+            preBlock->count += currentCount->count;
+            if (isBackMerge)
+            {
+                delete_chunk(pfreeMemChunk, currentBlock->pmemChunk);
+                push_front(pfreeMemChunkPool, currentBlock->pmemChunk);
+                freeMemChunkCount--;
+                memMapPoolCount++;
+            }
+            currentBlock->pmemChunk = NULL;
+        }
+    }
+
+    memUsedSize -= size;
+}
+
+void* sf_realloc()
+{
+   int memPoolStructSize = sizeof(MemoryPool);
+   void* newMemoryPool = (void*) malloc (size * 2 - memPoolStructSize);
+   int newMemPoolCount = (size * 2 - memPoolStructSize + MINUNITSIZE - 1) / MINUNITSIZE;
+   MemoryBlock* newPmemMap = (MemoryBlock*) ((char*)newMemoryPool + memPoolStructSize);
+   memset(newMemoryPool, 0, size*2 - memPoolStructSize);
+   void* newMemory = (char*) newMemoryPool + sizeof(MemoryBlock) * newMemPoolCount + sizeof(MemoryChunk) * newMemPoolCount;
+   memcpy(newMemory, memoryAvialable, size);
 }
